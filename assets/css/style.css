@@ -1,3 +1,84 @@
+@import "theme.css";
 *{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+body{
+    width: 100%;
+}
+
+.inputDiv{
+    margin-top: 10px;
+    display: flex;
+}
+
+.Inputlabel{
+    margin-right: 12px;
+    font-weight: 450;
+    font-size: var(--textmedium);
+    width: 10%;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+}
+
+.InputBox{
+    width: 75%;
+    height: 36px;
+}
+
+#inputButn{
+    background-color: var(--buttonColour );
+    font-size: var(--textmedium);
+    color: black;
+    border: none;
+    padding: 4px 12px;
+    cursor: pointer;
+    border-radius: 5%;
+    margin-left: 2%;
+}
+
+#inputButn:hover {
+    background-color:#0542e9e3;
+    transition: 0.7s;
+}
+
+#inputButn:focus {
+    outline-color: transparent;
+    outline-style:solid;
+    box-shadow: 0 0 0 4px #5a01a7;
+}
+
+#inputButn:disabled{
+    cursor: not-allowed;
+    background-color: var(--disable);
+}
+
+#inputButn:active {
+    background-color: #ffbf00;
+}
+
+#tablecontainer th{
+    text-align: center;
+    background-color: var(--tablecol);
+}
+
+#tablecontainer th, #tablecontainer td{
+    border: 2px solid slategray;
+    padding: 8px;
+    text-align: center;
+}
+
+#tablecontainer table {
+    width: 100%;
+}
+  
+#tablecontainer tr:nth-child(even){background-color: var(--tablecol)}
+
+header {
+    background-color: #F1F1F1;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
 }

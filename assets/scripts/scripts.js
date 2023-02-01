@@ -9,11 +9,11 @@ inputArr.forEach((val)=>{
 // console.log(inputArr);
 
 const butn = document.createElement("button");
-// butn.id = "inputButn";
+butn.id = "inputButn";
 butn.innerHTML = "Save";
 inputContainerRef.appendChild(butn);
 
-const tablecontainer = document.getElementById("table_container");
+const tablecontainer = document.getElementById("tablecontainer");
 const table = createTable();
 tablecontainer.appendChild(table);
 

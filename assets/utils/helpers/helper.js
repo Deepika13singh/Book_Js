@@ -10,21 +10,26 @@ function getTag(obj){
             input = document.createElement("input");
             input.type = type;
             input.name = key;
+            input.id = id;
             break;
         default:
             input = document.createElement("input");
             input.type = TEXT;
             input.name = key;
+            input.id = id;
             break;
     }
 
     const inputTag = document.createElement('div');
+    inputTag.classList.add('inputDiv');
     if(input){
         const inputLab = document.createElement("label");
         inputLab.setAttribute("for",id);
         inputLab.innerHTML=key;
+        inputLab.classList.add("Inputlabel");
+        input.classList.add("InputBox");
         inputTag.appendChild(inputLab);
-        inputTag.appendChild(input);
+        inputTag.appendChild(input);inputTag.classList.add("InputTag");
     }
 
     return inputTag;
@@ -48,24 +53,24 @@ function getInfo(){
     const Info = [];
     for(let {type,id} of inputObjArr){
         const tag = document.getElementById(`${id}`);
-        Info.push(tag.value);
-        tag.value="";
+        if (tag.value){
+            Info.push(tag.value);
+            tag.value="";
+        }
     }
-    console.log(Info);
     return Info;
 }
 
 function adddata(){
     const data = getInfo();
-    console.log(data);
     if(data.length!=inputObjArr.length){
         alert("All data is not filled");
     }
     else{
-        const row = document.querySelector("#table_container table tbody");
+        const row = document.querySelector("#tablecontainer table tbody");
         const tr = document.createElement('tr');
         for(let val of data){
-            const td = createElement('td');
+            const td = document.createElement('td');
             td.innerHTML=val;
             tr.appendChild(td);
         }
